@@ -1,0 +1,80 @@
+@use "../styles/breakpoints" as *;
+
+@mixin h1 {
+  font-size: 56px;
+  text-transform: uppercase;
+  line-height: 58px;
+  letter-spacing: 2px;
+}
+
+@mixin h2 {
+  font-size: 40px;
+  text-transform: uppercase;
+  line-height: 44px;
+  letter-spacing: 1.5px;
+}
+
+@mixin h3 {
+  font-size: 32px;
+  text-transform: uppercase;
+  line-height: 36px;
+  letter-spacing: 1.15px;
+}
+
+@mixin h4 {
+  font-size: 28px;
+  text-transform: uppercase;
+  line-height: 38px;
+  letter-spacing: 2px;
+}
+
+@mixin h5 {
+  font-size: 24px;
+  text-transform: uppercase;
+  line-height: 33px;
+  letter-spacing: 1.7px;
+}
+
+@mixin h6 {
+  font-size: 18px;
+  text-transform: uppercase;
+  line-height: 24px;
+  letter-spacing: 1.3px;
+}
+
+@mixin overline {
+  font-size: 14px;
+  text-transform: uppercase;
+  line-height: 19px;
+  letter-spacing: 10px;
+}
+
+@mixin sub-title {
+  font-size: 13px;
+  text-transform: uppercase;
+  line-height: 25px;
+  letter-spacing: 1px;
+}
+
+@mixin body {
+  font-size: 15px;
+  line-height: 25px;
+}
+
+@mixin for-phone-only {
+  @media (max-width: $mobile-bp) {
+    @content;
+  }
+}
+
+@mixin for-tablet-and-down {
+  @media (min-width: $tablet-bp) and (max-width: $mobile-bp) {
+    @content;
+  }
+}
+
+@mixin for-desktop-up {
+  @media (min-width: $desktop-bp) {
+    @content;
+  }
+}
