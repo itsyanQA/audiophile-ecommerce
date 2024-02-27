@@ -11,7 +11,8 @@
       "@features/*": ["src/features/*"],
       "@hooks/*": ["src/hooks/*"],
       "@types/*": ["src/types/*"],
-      "@pages/*": ["src/pages/*"]
+      "@pages/*": ["src/pages/*"],
+      "@assets/*": ["public/assets/*"]
     },
 
     /* Bundler mode */
@@ -26,8 +27,8 @@
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true,
+    "noFallthroughCasesInSwitch": true
   },
-  "include": ["src"],
+  "include": ["src", "public"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
