@@ -1,0 +1,21 @@
+@use "../../styles/mixins" as *;
+
+.shop-button {
+  all: unset;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+
+  &:hover > .shop-button__text {
+    color: var(--rust);
+    opacity: 100%;
+  }
+
+  &__text {
+    @include sub-title;
+    font-weight: bold;
+    opacity: 50%;
+    transition: color 250ms ease-out, opacity 250ms ease-out;
+  }
+}
