@@ -1,0 +1,42 @@
+@use "../../styles/mixins" as *;
+
+.button {
+  all: unset;
+  width: 100%;
+  cursor: pointer;
+  text-align: center;
+  padding-block: 11.5px;
+  width: 160px;
+  transition: background-color 250ms ease-out, color 250ms ease-out;
+  @include sub-title;
+  font-weight: bold;
+
+  &--colorful {
+    color: var(--white);
+    background-color: var(--rust);
+
+    &:hover {
+      background-color: var(--apricot);
+    }
+  }
+
+  &--transparent {
+    color: var(--black);
+    background-color: transparent;
+    outline: 2px solid var(--black);
+
+    &:hover {
+      color: var(--white);
+      background-color: var(--black);
+    }
+  }
+
+  &--black {
+    color: var(--white);
+    background-color: var(--black);
+
+    &:hover {
+      background-color: #4c4c4c;
+    }
+  }
+}
