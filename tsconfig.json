@@ -10,7 +10,7 @@
       "@components/*": ["src/components/*"],
       "@features/*": ["src/features/*"],
       "@hooks/*": ["src/hooks/*"],
-      "@types/*": ["src/types/*"],
+      "@customTypes/*": ["src/types/*"],
       "@pages/*": ["src/pages/*"],
       "@assets/*": ["public/assets/*"]
     },
