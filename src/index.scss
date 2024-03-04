@@ -2,6 +2,11 @@
 @import "./styles/colors";
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
 
+body {
+  overflow-x: hidden;
+  background-color: var(--pearl);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -11,4 +16,12 @@
 
 li {
   list-style-type: none;
+}
+
+button {
+  width: fit-content;
+
+  &:focus {
+    outline: revert;
+  }
 }
