@@ -16,6 +16,13 @@ type Other = {
   image: Image;
 };
 
+export type Cart = {
+  quantity: number;
+  name: string;
+  price: number;
+  image: string;
+};
+
 export type IncludedItem = {
   quantity: number;
   item: string;
