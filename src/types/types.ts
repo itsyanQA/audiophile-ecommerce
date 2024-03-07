@@ -20,7 +20,8 @@ export type Cart = {
   quantity: number;
   name: string;
   price: number;
-  image: string;
+  image: Image;
+  id: number;
 };
 
 export type IncludedItem = {
