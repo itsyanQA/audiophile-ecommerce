@@ -1,3 +1,5 @@
+import { Layout } from "@components/layout";
+
 export function App() {
-  return <div>App</div>;
+  return <Layout />;
 }
