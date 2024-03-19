@@ -2,7 +2,6 @@
 
 .button {
   all: unset;
-  width: 100%;
   cursor: pointer;
   text-align: center;
   padding-block: 11.5px;
@@ -38,5 +37,9 @@
     &:hover {
       background-color: #4c4c4c;
     }
+  }
+
+  &--full-width {
+    width: 100%;
   }
 }
