@@ -67,8 +67,28 @@
   }
 }
 
+@mixin for-tablet-only {
+  @media (min-width: $mobile-bp) and (max-width: $tablet-bp) {
+    @content;
+  }
+}
+
+@mixin apply-backdrop($class) {
+  body:has(#{$class}) {
+    transition: background-color 150ms ease-out;
+    background-color: #979797;
+
+    & main,
+    & footer {
+      pointer-events: none;
+      transition: filter 150ms ease-out;
+      filter: brightness(60%);
+    }
+  }
+}
+
 @mixin for-tablet-and-down {
-  @media (min-width: $tablet-bp) and (max-width: $mobile-bp) {
+  @media (max-width: $tablet-bp) {
     @content;
   }
 }
