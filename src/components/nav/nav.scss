@@ -1,0 +1,25 @@
+@use "../../styles/mixins" as *;
+
+.nav-items {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+
+  @include for-phone-only {
+    flex-direction: column;
+    gap: 17px;
+  }
+
+  & a {
+    color: var(--white);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    @include sub-title;
+    font-weight: 500;
+    transition: color 250ms ease-out;
+
+    &:is(:hover, :active) {
+      color: var(--rust);
+    }
+  }
+}
