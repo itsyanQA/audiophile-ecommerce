@@ -1,0 +1,144 @@
+@use "../../styles/mixins" as *;
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-block: 40px;
+  margin-inline: auto;
+  max-width: 1110px;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  transition: all 250ms ease-out;
+
+  @include for-tablet-only {
+    padding-inline: 40px;
+  }
+
+  @include for-phone-only {
+    position: relative;
+    padding-inline: 25px;
+  }
+
+  &::after {
+    transition: all 250ms ease-out;
+  }
+
+  &::before {
+    content: "";
+    background-color: var(--border);
+    bottom: -1px;
+    width: 100%;
+    position: absolute;
+    height: 1px;
+
+    @include for-tablet-only {
+      width: calc(100% - 80px);
+      margin-inline: auto;
+    }
+
+    @include for-phone-only {
+      margin-inline: -25px;
+    }
+  }
+
+  &--inside-homepage,
+  &--non-homepage {
+    &::after {
+      content: "";
+      position: absolute;
+      width: 100vw;
+      height: 106px;
+      z-index: -1;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &--inside-homepage {
+    background-color: var(--charcoal);
+
+    @include for-phone-only {
+      background-color: transparent;
+    }
+
+    & > a {
+      pointer-events: none;
+    }
+
+    &::after {
+      background-color: var(--charcoal);
+
+      @include for-phone-only {
+        background-color: transparent;
+      }
+    }
+  }
+
+  &--non-homepage {
+    background-color: var(--black);
+
+    &::after {
+      background-color: var(--black);
+    }
+  }
+
+  &--menu-open {
+    background-color: var(--black);
+
+    &::after {
+      background-color: var(--black);
+    }
+  }
+
+  &--hide-border {
+    &::before {
+      height: 0;
+    }
+  }
+
+  &__border {
+    width: 100%;
+    height: 1px;
+    background-color: var(--border);
+  }
+
+  & a {
+    color: var(--white);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    @include sub-title;
+    transition: color 250ms ease-out;
+
+    &:is(:hover, :active) {
+      color: var(--rust);
+    }
+  }
+
+  &__cart-icon {
+    cursor: pointer;
+  }
+
+  &__nav-wrapper {
+    margin-right: 100px;
+
+    @include for-tablet-and-down {
+      display: none;
+    }
+  }
+
+  &__logo-and-menu {
+    display: flex;
+    gap: 43px;
+  }
+
+  &__menu-wrapper {
+    display: none;
+
+    @include for-tablet-and-down {
+      display: block;
+    }
+  }
+}
