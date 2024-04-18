@@ -1,0 +1,24 @@
+@use "../../styles/mixins" as *;
+
+.category-card {
+  background-color: var(--ivory);
+  height: 204px;
+  border-radius: 8px;
+
+  &__inside-container {
+    transform: translateY(-50px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &__image {
+    height: 160px;
+  }
+
+  &__name {
+    @include h6;
+    font-weight: bold;
+  }
+}

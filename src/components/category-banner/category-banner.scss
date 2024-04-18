@@ -1,0 +1,19 @@
+@use "../../styles/mixins" as *;
+
+.category-banner {
+  background-color: var(--black);
+  height: 225px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--white);
+  padding-inline: 165px;
+  font-weight: 500;
+  @include h2;
+
+  @include for-phone-only {
+    @include h4;
+    font-weight: 700;
+    height: 115px;
+  }
+}

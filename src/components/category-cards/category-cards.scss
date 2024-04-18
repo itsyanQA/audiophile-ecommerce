@@ -1,0 +1,17 @@
+@use "../../styles/mixins" as *;
+
+.category-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 36px;
+
+  @include for-tablet-only {
+    gap: 10px;
+  }
+
+  @include for-phone-only {
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+  }
+}
