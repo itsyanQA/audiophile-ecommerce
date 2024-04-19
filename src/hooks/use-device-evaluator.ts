@@ -1,3 +1,4 @@
+import { Device } from "@customTypes/types";
 import { useEffect, useState } from "react";
 
 export function useDeviceEvaluator() {
@@ -15,7 +16,7 @@ export function useDeviceEvaluator() {
     };
   }, []);
 
-  const getDeviceType = (): "mobile" | "tablet" | "desktop" => {
+  const getDeviceType = (): Device => {
     if (width <= 600) {
       return "mobile";
     } else if (width > 600 && width < 900) {
