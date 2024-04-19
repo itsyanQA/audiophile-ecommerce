@@ -1,0 +1,25 @@
+@use "../../../../styles/mixins" as *;
+
+.upsell {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 70px;
+
+  & > h3 {
+    @include h3;
+  }
+
+  &__cards {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    width: 100%;
+
+    @include for-phone-only {
+      flex-direction: column;
+      gap: 45px;
+    }
+  }
+}

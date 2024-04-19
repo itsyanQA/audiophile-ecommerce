@@ -1,0 +1,96 @@
+@use "../../../../styles/mixins" as *;
+
+.zx9-banner {
+  background-color: var(--rust);
+  background-image: url("assets/home/desktop/pattern-circles.svg");
+  background-repeat: no-repeat;
+  background-position-x: -130px;
+  background-position-y: -40px;
+  height: 560px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-end;
+  overflow: hidden;
+
+  @include for-tablet-only {
+    height: 720px;
+    background-position-y: -275px;
+  }
+
+  @include for-tablet-and-down {
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: unset;
+    background-position-x: center;
+  }
+
+  @include for-phone-only {
+    height: 600px;
+    background-size: cover;
+    background-position-y: -127px;
+  }
+
+  &__typography-container {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    width: 25%;
+    padding-bottom: 120px;
+
+    @include for-tablet-only {
+      width: 50%;
+    }
+
+    @include for-tablet-and-down {
+      padding-bottom: unset;
+      align-items: center;
+      gap: 25px;
+    }
+
+    @include for-phone-only {
+      width: 85%;
+    }
+  }
+
+  &__title {
+    @include h1;
+    color: var(--white);
+
+    @include for-tablet-and-down {
+      text-align: center;
+    }
+    @include for-phone-only {
+      font-size: 36px;
+      max-width: 70%;
+    }
+  }
+
+  &__description {
+    @include body;
+    opacity: 75%;
+    color: var(--white);
+
+    @include for-tablet-and-down {
+      text-align: center;
+    }
+  }
+
+  & > img {
+    height: 493px;
+    width: 410px;
+    transform: translateY(15px);
+
+    @include for-tablet-only {
+      height: 237px;
+      width: 197.21px;
+      transform: unset;
+    }
+
+    @include for-phone-only {
+      width: 172.25px;
+      height: 207px;
+    }
+  }
+}

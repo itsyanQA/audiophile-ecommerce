@@ -1,0 +1,29 @@
+@use "../../../../styles/mixins" as *;
+
+.zx7-banner {
+  height: 320px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  justify-content: center;
+  padding-inline-start: 100px;
+  position: relative;
+
+  @include for-phone-only {
+    padding-inline-start: 25px;
+  }
+
+  & img {
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    top: 0;
+    border-radius: 8px;
+  }
+
+  &__title {
+    @include h4;
+    color: var(--black);
+  }
+}

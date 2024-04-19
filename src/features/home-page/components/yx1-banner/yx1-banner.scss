@@ -1,0 +1,44 @@
+@use "../../../../styles/mixins" as *;
+
+.yx1-banner {
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(2, 1fr);
+
+  @include for-tablet-only {
+    gap: 11px;
+  }
+
+  @include for-phone-only {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__typography-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    gap: 38px;
+    padding-left: 100px;
+    background-color: var(--ivory);
+    border-radius: 8px;
+
+    @include for-tablet-and-down {
+      padding-left: 40px;
+    }
+
+    @include for-phone-only {
+      height: 200px;
+    }
+  }
+
+  &__title {
+    @include h4;
+    color: var(--black);
+  }
+
+  & > img {
+    border-radius: 8px;
+  }
+}

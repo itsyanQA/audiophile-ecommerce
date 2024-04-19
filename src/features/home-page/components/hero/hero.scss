@@ -1,0 +1,99 @@
+@use "../../../../styles/mixins" as *;
+
+.hero {
+  display: flex;
+  align-items: center;
+  background-color: var(--charcoal);
+  margin-inline: auto;
+  max-width: 1110px;
+  justify-content: space-between;
+  position: relative;
+
+  @media screen and (min-width: 900px) and (max-width: 1200px) {
+    padding-inline: 40px;
+    max-width: unset;
+  }
+
+  @include for-tablet-and-down {
+    background-color: transparent;
+    height: 938px;
+    justify-content: center;
+  }
+
+  @media screen and (max-width: 768px) {
+    height: 750px;
+  }
+
+  @include for-phone-only {
+    height: 500px;
+    position: initial;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100vw;
+    height: 729px;
+    background-color: var(--charcoal);
+    z-index: -1;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    @include for-tablet-and-down {
+      display: none;
+    }
+  }
+
+  &__product {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    max-width: 398px;
+
+    @include for-tablet-and-down {
+      align-items: center;
+    }
+
+    @include for-phone-only {
+      gap: 15px;
+    }
+  }
+
+  &__new-product-text {
+    @include overline;
+    color: var(--white);
+    opacity: 50%;
+  }
+
+  &__new-product-name {
+    @include h1;
+    color: var(--white);
+
+    @include for-phone-only {
+      font-size: 36px;
+      text-align: center;
+      line-height: 40px;
+    }
+  }
+
+  &__new-product-description {
+    @include body;
+    color: var(--white);
+    opacity: 75%;
+    max-width: 350px;
+
+    @include for-tablet-and-down {
+      text-align: center;
+    }
+  }
+
+  &__image {
+    @include for-tablet-and-down {
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      width: 100%;
+    }
+  }
+}
