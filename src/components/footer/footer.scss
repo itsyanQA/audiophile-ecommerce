@@ -10,6 +10,11 @@
   position: relative;
   max-width: 1110px;
 
+  @media screen and (min-width: 900px) and (max-width: 1200px) {
+    padding-inline: 40px;
+    max-width: unset;
+  }
+
   @include for-tablet-and-down {
     padding-inline: 40px;
   }
@@ -23,7 +28,7 @@
     content: "";
     position: absolute;
     width: 100vw;
-    height: 320px;
+    height: 386px;
     z-index: -1;
     top: 50%;
     left: 50%;
@@ -38,6 +43,10 @@
     top: 0;
     left: 0;
     background-color: var(--rust);
+
+    @media screen and (min-width: 900px) and (max-width: 1200px) {
+      left: 40px;
+    }
 
     @include for-tablet-and-down {
       left: 40px;

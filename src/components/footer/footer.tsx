@@ -2,7 +2,7 @@ import "./footer.scss";
 import { Nav } from "@components/nav";
 import Logo from "@assets/shared/desktop/logo.svg?react";
 import { Social } from "@components/social";
-import { CodedBy } from "@components/coded-by/coded-by";
+import { CodedBy } from "@components/coded-by";
 
 export function Footer() {
   return (

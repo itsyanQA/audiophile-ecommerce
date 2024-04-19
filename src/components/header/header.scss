@@ -8,21 +8,21 @@
   margin-inline: auto;
   max-width: 1110px;
   position: sticky;
-  top: 0;
+  top: -1px;
   z-index: 2;
-  transition: all 250ms ease-out;
+  max-height: 106px;
+
+  @media screen and (min-width: 900px) and (max-width: 1200px) {
+    padding-inline: 40px;
+    max-width: unset;
+  }
 
   @include for-tablet-only {
     padding-inline: 40px;
   }
 
   @include for-phone-only {
-    position: relative;
     padding-inline: 25px;
-  }
-
-  &::after {
-    transition: all 250ms ease-out;
   }
 
   &::before {
@@ -32,6 +32,10 @@
     width: 100%;
     position: absolute;
     height: 1px;
+
+    @media screen and (min-width: 900px) and (max-width: 1200px) {
+      width: calc(100% - 80px);
+    }
 
     @include for-tablet-only {
       width: calc(100% - 80px);
@@ -54,15 +58,15 @@
       left: 50%;
       top: 50%;
       transform: translate(-50%, -50%);
+
+      @include for-phone-only {
+        content: none;
+      }
     }
   }
 
   &--inside-homepage {
     background-color: var(--charcoal);
-
-    @include for-phone-only {
-      background-color: transparent;
-    }
 
     & > a {
       pointer-events: none;
@@ -70,10 +74,6 @@
 
     &::after {
       background-color: var(--charcoal);
-
-      @include for-phone-only {
-        background-color: transparent;
-      }
     }
   }
 
@@ -129,16 +129,17 @@
     }
   }
 
-  &__logo-and-menu {
-    display: flex;
-    gap: 43px;
-  }
-
   &__menu-wrapper {
     display: none;
 
     @include for-tablet-and-down {
       display: block;
+    }
+  }
+
+  &__link {
+    @include for-tablet-only {
+      margin-right: 59%;
     }
   }
 }

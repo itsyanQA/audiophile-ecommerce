@@ -20,14 +20,12 @@ export function Header() {
         shouldHideBorder ? "header--hide-border" : ""
       } ${isMenuOpen ? "header--menu-open" : ""}`}
     >
-      <div className="header__logo-and-menu">
-        <div className="header__menu-wrapper" onClick={(e) => e.stopPropagation()}>
-          <Menu isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
-        </div>
-        <Link to="/">
-          <Logo />
-        </Link>
+      <div className="header__menu-wrapper" onClick={(e) => e.stopPropagation()}>
+        <Menu isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
       </div>
+      <Link to="/" className="header__link">
+        <Logo />
+      </Link>
       <div className="header__nav-wrapper">
         <Nav />
       </div>
