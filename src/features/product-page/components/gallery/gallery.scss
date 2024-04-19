@@ -1,0 +1,33 @@
+@use "../../.././../styles/mixins" as *;
+
+.gallery {
+  display: flex;
+  justify-content: space-between;
+
+  @include for-tablet-only {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 18px;
+  }
+
+  @include for-phone-only {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &__left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 32px;
+
+    @include for-tablet-and-down {
+      gap: 20px;
+    }
+  }
+
+  & img {
+    border-radius: 8px;
+    height: 100%;
+  }
+}
