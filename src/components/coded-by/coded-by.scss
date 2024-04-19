@@ -1,0 +1,13 @@
+@use "../../styles/mixins" as *;
+
+.coded-by {
+  text-align: center;
+  font-size: 14px;
+  color: var(--white);
+  opacity: 50%;
+  @include body;
+
+  @media screen and (max-width: 600px) {
+    font-size: 12px;
+  }
+}

@@ -2,6 +2,7 @@ import "./footer.scss";
 import { Nav } from "@components/nav";
 import Logo from "@assets/shared/desktop/logo.svg?react";
 import { Social } from "@components/social";
+import { CodedBy } from "@components/coded-by/coded-by";
 
 export function Footer() {
   return (
@@ -14,18 +15,14 @@ export function Footer() {
       <div className="footer__typography-and-icons">
         <div className="footer__typography">
           <p className="footer__audiophile-description">
-            Audiophile is an all in one stop to fulfill your audio needs. We're
-            a small team of music lovers and sound specialists who are devoted
-            to helping you get the most out of personal audio. Come and visit
-            our demo facility - we’re open 7 days a week.
+            Audiophile is an all in one stop to fulfill your audio needs. We're a small team of music lovers and sound specialists who are
+            devoted to helping you get the most out of personal audio. Come and visit our demo facility - we’re open 7 days a week.
           </p>
-          <span className="footer__copyright">
-            Copyright 2021. All Rights Reserved
-          </span>
+          <span className="footer__copyright">Copyright 2021. All Rights Reserved</span>
         </div>
-
         <Social />
       </div>
+      <CodedBy />
     </footer>
   );
 }
