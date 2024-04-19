@@ -1,0 +1,26 @@
+@use "../../../../styles/mixins" as *;
+
+.summary {
+  background-color: var(--white);
+  border-radius: 8px;
+  gap: 30px;
+  display: flex;
+  flex-direction: column;
+  padding: 38px 30px;
+  height: fit-content;
+
+  @include for-phone-only {
+    padding: 33px 23px;
+  }
+
+  &__title {
+    @include h6;
+    color: var(--black);
+  }
+
+  &__prices {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+}

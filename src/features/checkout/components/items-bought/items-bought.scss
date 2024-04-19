@@ -1,0 +1,92 @@
+@use "../../../../styles/mixins" as *;
+
+.items-bought {
+  display: flex;
+  max-height: 140px;
+  transition: max-height 500ms ease-out;
+
+  @include for-phone-only {
+    flex-direction: column;
+    max-height: unset;
+  }
+
+  &--is-view-more {
+    max-height: 2000px;
+  }
+
+  &__cart-item-wrapper {
+    width: 100%;
+
+    &--multiple {
+      padding-bottom: 10px;
+      margin-bottom: 10px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  &__more-items-text {
+    font-size: 12px;
+    letter-spacing: -0.21px;
+    font-weight: 700;
+    color: var(--black);
+    opacity: 50%;
+    cursor: pointer;
+    transition: opacity 250ms ease-out;
+
+    &:hover {
+      color: var(--rust);
+      opacity: 100%;
+    }
+  }
+
+  &__items {
+    width: 55%;
+    background-color: var(--ivory);
+    border-radius: 8px 0 0 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 19px;
+
+    @include for-phone-only {
+      width: unset;
+      border-radius: 8px 8px 0 0;
+    }
+  }
+
+  &__total {
+    width: 45%;
+    background-color: var(--black);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 0 8px 8px 0;
+    justify-content: center;
+    padding: 19px;
+
+    &--is-view-more {
+      justify-content: flex-end;
+      padding: 19px 19px 40px 19px;
+    }
+
+    @include for-phone-only {
+      width: unset;
+      border-radius: 0 0 8px 8px;
+    }
+  }
+
+  &__grand-total-text {
+    color: var(--white);
+    opacity: 50%;
+    text-transform: uppercase;
+    @include body;
+    font-weight: 500;
+  }
+
+  &__grand-total-price {
+    color: var(--white);
+    font-size: 18px;
+    font-weight: 700;
+  }
+}

@@ -1,0 +1,47 @@
+@use "../../../../styles/mixins" as *;
+
+.payment-method {
+  display: flex;
+  padding: 17px 24px;
+  border: 1px solid #cfcfcf;
+  border-radius: 8px;
+  gap: 15px;
+  cursor: pointer;
+
+  &:hover,
+  &__selected {
+    border-color: var(--rust);
+  }
+
+  & span {
+    color: var(--black);
+    letter-spacing: -0.25px;
+    font-weight: bold;
+    font-size: 14px;
+  }
+
+  & input {
+    pointer-events: none;
+    width: 20px;
+    height: 20px;
+    accent-color: var(--rust);
+    border-color: #cfcfcf;
+  }
+
+  &__checkbox {
+    width: 20px;
+    height: 20px;
+    outline: 1px solid #cfcfcf;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__checkbox-dot {
+    width: 10px;
+    height: 10px;
+    background-color: var(--rust);
+    border-radius: 100%;
+  }
+}

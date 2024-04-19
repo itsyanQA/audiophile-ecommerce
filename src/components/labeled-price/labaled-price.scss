@@ -1,0 +1,20 @@
+@use "../../styles/mixins" as *;
+
+.labeled-price {
+  display: flex;
+  justify-content: space-between;
+
+  &__label {
+    @include body;
+    color: var(--black);
+    opacity: 50%;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  &__price {
+    color: var(--black);
+    font-weight: 700;
+    font-size: 18px;
+  }
+}

@@ -1,0 +1,12 @@
+@use "../../../../styles/mixins" as *;
+
+.checkout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 30px;
+
+  @include for-tablet-and-down {
+    display: flex;
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,54 @@
+@use "../../../../styles/mixins" as *;
+
+@include apply-backdrop(".success-popup");
+
+body:has(.success-popup) {
+  // Avoid navigation to other pages, onBlur will be invoked instead.
+  & header,
+  & footer {
+    pointer-events: none;
+  }
+}
+
+.success-popup {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+  padding: 55px 48px;
+  background-color: var(--white);
+  border-radius: 8px;
+  width: 50%;
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 540px;
+
+  & h3 {
+    @include h3;
+    max-width: 70%;
+
+    @include for-phone-only {
+      @include h5;
+      line-height: 28px;
+      letter-spacing: 0.86px;
+      font-weight: 700;
+    }
+  }
+
+  & p {
+    @include body;
+    opacity: 50%;
+  }
+
+  @include for-tablet-only {
+    min-width: 540px;
+  }
+
+  @include for-phone-only {
+    min-width: 327px;
+    top: 70%;
+    padding: 37px 32px;
+    gap: 10.5px;
+  }
+}
