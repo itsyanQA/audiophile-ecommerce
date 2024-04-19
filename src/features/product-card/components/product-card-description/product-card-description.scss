@@ -1,0 +1,17 @@
+@use "../../../../styles/mixins" as *;
+
+.product-card-description {
+  @include body;
+  color: var(--black);
+  opacity: 50%;
+
+  @include for-tablet-and-down {
+    text-align: center;
+  }
+
+  &--is-product-page {
+    @include for-tablet-and-down {
+      text-align: unset;
+    }
+  }
+}

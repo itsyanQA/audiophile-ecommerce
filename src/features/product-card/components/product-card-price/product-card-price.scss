@@ -1,0 +1,7 @@
+@use "../../../../styles/mixins" as *;
+
+.product-card-price {
+  @include h6;
+  color: var(--black);
+  font-weight: bold;
+}

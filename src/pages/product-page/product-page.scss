@@ -1,0 +1,22 @@
+@use "../../styles/mixins" as *;
+
+.go-back-and-product-container {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+
+  @include for-tablet-only {
+    gap: 30px;
+  }
+
+  // & .product-card {
+  //   flex-direction: row;
+  // }
+}
+
+.product-card-wrapper {
+  @include for-tablet-only {
+    height: 480px;
+    width: 281px;
+  }
+}

@@ -1,0 +1,49 @@
+.quantity {
+  display: flex;
+  background-color: var(--ivory);
+  justify-content: space-around;
+  align-items: center;
+
+  &--regular {
+    height: 48px;
+    width: 120px;
+
+    & button {
+      width: 54px !important;
+      height: 48px !important;
+    }
+  }
+
+  &--small {
+    height: 32px;
+    width: 96px;
+
+    & button {
+      width: 38px !important;
+      height: 32px !important;
+    }
+  }
+
+  & button {
+    all: unset;
+    opacity: 25%;
+    cursor: pointer;
+    color: var(--black);
+    transition: color 250ms ease-out, opacity 250ms ease-out;
+    font-weight: bold;
+    text-align: center;
+
+    &:hover:not(:disabled) {
+      color: var(--rust);
+      opacity: 100%;
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+    }
+  }
+
+  &__number {
+    font-weight: 800;
+  }
+}

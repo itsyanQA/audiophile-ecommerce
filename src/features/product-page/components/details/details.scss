@@ -1,0 +1,11 @@
+@use "../../../../styles/mixins" as *;
+
+.details {
+  display: flex;
+  justify-content: space-between;
+
+  @include for-tablet-and-down {
+    flex-direction: column;
+    gap: 100px;
+  }
+}

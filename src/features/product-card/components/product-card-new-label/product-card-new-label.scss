@@ -1,0 +1,16 @@
+@use "../../../../styles/mixins" as *;
+
+.product-card-new-label {
+  @include overline;
+  color: var(--rust);
+
+  @include for-tablet-and-down {
+    text-align: center;
+  }
+
+  &--is-product-page {
+    @include for-tablet-and-down {
+      text-align: unset;
+    }
+  }
+}

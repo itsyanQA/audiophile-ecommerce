@@ -1,0 +1,74 @@
+@use "../../../../styles/mixins" as *;
+
+.product-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @include for-tablet-and-down {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &--is-product-page {
+    @include for-tablet-only {
+      gap: 71px;
+      flex-direction: row;
+
+      & picture {
+        height: 480px;
+        width: 281px;
+      }
+    }
+
+    @include for-phone-only {
+      flex-direction: column;
+    }
+  }
+
+  & img {
+    height: 560px;
+    width: 540px;
+    border-radius: 8px;
+
+    @include for-tablet-only {
+      object-fit: contain;
+      height: 352px;
+      width: unset;
+    }
+
+    @include for-phone-only {
+      width: unset;
+      height: 327px;
+    }
+  }
+
+  & picture {
+    position: relative;
+    display: flex;
+
+    @include for-tablet-and-down {
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+
+      &::before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        height: 100%;
+        width: 100%;
+        background-color: #f1f1f1;
+        border-radius: 8px;
+      }
+    }
+  }
+
+  &:nth-child(even):not(.product-card--is-product-page) {
+    flex-direction: row-reverse;
+
+    @include for-tablet-and-down {
+      flex-direction: column;
+    }
+  }
+}

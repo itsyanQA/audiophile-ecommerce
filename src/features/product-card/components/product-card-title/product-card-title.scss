@@ -1,0 +1,19 @@
+@use "../../../../styles/mixins" as *;
+
+.product-card-title {
+  @include h2;
+  color: var(--black);
+  font-weight: bold;
+
+  @include for-tablet-and-down {
+    text-align: center;
+  }
+
+  @include for-phone-only {
+    @include h4;
+  }
+
+  &--is-product-page {
+    text-align: unset;
+  }
+}

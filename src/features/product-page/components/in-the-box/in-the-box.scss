@@ -1,0 +1,17 @@
+@use "../../../../styles/mixins" as *;
+
+.in-the-box {
+  display: flex;
+  flex-direction: column;
+  gap: 45px;
+
+  & > h3 {
+    @include h3;
+  }
+
+  &__items {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+}

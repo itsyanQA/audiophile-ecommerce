@@ -1,0 +1,22 @@
+@use "../../../../styles/mixins" as *;
+
+.features {
+  display: flex;
+  flex-direction: column;
+  gap: 45px;
+
+  & > h3 {
+    @include h3;
+  }
+
+  &__text {
+    color: var(--black);
+    opacity: 50%;
+    white-space: break-spaces;
+    max-width: 635px;
+
+    @include for-phone-only {
+      @include body;
+    }
+  }
+}

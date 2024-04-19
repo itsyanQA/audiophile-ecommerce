@@ -1,0 +1,18 @@
+@use "../../../../styles/mixins" as *;
+
+.included-item {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+
+  &__quantity {
+    color: var(--rust);
+    width: 15px;
+    font-weight: bold;
+  }
+
+  &__item {
+    @include body;
+    opacity: 50%;
+  }
+}
