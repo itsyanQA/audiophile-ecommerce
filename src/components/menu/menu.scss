@@ -17,6 +17,18 @@
   &--disabled {
     pointer-events: none;
   }
+
+  @include for-phone-only {
+    padding-inline: 24px;
+    padding-block: 52px 42px;
+  }
+
+  &__close-icon {
+    color: var(--white);
+    font-size: 18px;
+    width: 16px;
+    display: block;
+  }
 }
 
 body:has(.menu) {

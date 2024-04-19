@@ -13,11 +13,10 @@ type MenuProps = {
 
 export function Menu({ isMenuOpen, setIsMenuOpen }: MenuProps) {
   const menuRef = useRef<HTMLDivElement | null>(null);
-  const clickAction = (e: MouseEvent<SVGSVGElement>) => {
+  const clickAction = (e: MouseEvent) => {
     e.stopPropagation();
     setIsMenuOpen((prevState) => !prevState);
   };
-  useClickOutside(menuRef as MutableRefObject<HTMLElement>, () => setIsMenuOpen((prevState) => !prevState));
   const { key } = useLocation();
 
   useEffect(() => {
@@ -26,7 +25,13 @@ export function Menu({ isMenuOpen, setIsMenuOpen }: MenuProps) {
 
   return (
     <>
-      <HamburgerIcon onClick={clickAction} className={`menu__icon ${isMenuOpen ? "menu__icon--disabled" : ""}`} />
+      {!isMenuOpen ? (
+        <HamburgerIcon onClick={clickAction} className={`menu__icon ${isMenuOpen ? "menu__icon--disabled" : ""}`} />
+      ) : (
+        <span onClick={clickAction} className="menu__close-icon">
+          ✖
+        </span>
+      )}
       {isMenuOpen &&
         createPortal(
           <div className="menu" ref={menuRef}>
