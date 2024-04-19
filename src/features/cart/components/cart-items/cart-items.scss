@@ -1,0 +1,17 @@
+.cart-items {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  &--scrollable {
+    max-height: 313px;
+    overflow-y: auto;
+    padding-inline-end: 10px;
+  }
+
+  &--in-checkout {
+    overflow-y: visible;
+    max-height: unset;
+    padding-inline-end: unset;
+  }
+}

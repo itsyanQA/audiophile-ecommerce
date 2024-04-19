@@ -1,0 +1,56 @@
+@use "../../../../styles/mixins" as *;
+
+@include apply-backdrop(".cart-content");
+
+.cart-content {
+  position: absolute;
+  top: 95px;
+  z-index: 1;
+  right: 0;
+  background-color: var(--white);
+  padding: 35px;
+  border-radius: 8px;
+  min-width: 377px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  animation: fade-in 150ms ease-in;
+
+  @include for-phone-only {
+    left: 50%;
+    transform: translate(-50%, -50%);
+    top: 373px;
+    position: fixed;
+    min-width: 327px;
+  }
+
+  &--empty {
+    align-items: center;
+  }
+
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__cart-amount {
+    @include h6;
+    color: var(--black);
+    font-weight: bold;
+  }
+
+  &__remove-all {
+    all: unset;
+    @include body;
+    color: var(--black);
+    opacity: 50%;
+    cursor: pointer;
+
+    &:hover {
+      color: var(--rust);
+      text-decoration: underline;
+      opacity: 100%;
+    }
+  }
+}

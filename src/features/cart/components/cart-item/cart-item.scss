@@ -1,0 +1,50 @@
+@use "../../../../styles/mixins" as *;
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  & img {
+    width: 64px;
+    height: 64px;
+    border-radius: 8px;
+  }
+
+  &__price {
+    color: var(--black);
+    opacity: 50%;
+    line-height: 25px;
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  &__name {
+    @include body;
+    color: var(--black);
+    font-weight: bold;
+  }
+
+  &__info-with-quantity {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+
+    &--in-checkout-page {
+      align-items: flex-start;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__quantity-text {
+    @include body;
+    color: var(--black);
+    opacity: 50%;
+    font-weight: bold;
+  }
+}

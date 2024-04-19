@@ -1,0 +1,25 @@
+.cart {
+  position: relative;
+
+  &__icon {
+    cursor: pointer;
+  }
+
+  &__item-count {
+    position: absolute;
+    top: -4px;
+    background-color: var(--rust);
+    border-radius: 100%;
+    color: var(--white);
+    width: 15px;
+    height: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    right: -4px;
+    font-size: 9px;
+    font-weight: 600;
+    animation: fade-in 250ms ease-out;
+    pointer-events: none;
+  }
+}
