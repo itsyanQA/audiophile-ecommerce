@@ -5,20 +5,36 @@
   height: 204px;
   border-radius: 8px;
 
+  @include for-phone-only {
+    height: 165px;
+  }
+
   &__inside-container {
     transform: translateY(-50px);
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 10px;
+
+    @include for-phone-only {
+      transform: translateY(-25px);
+    }
   }
 
   &__image {
     height: 160px;
+
+    @include for-phone-only {
+      height: 108px;
+    }
   }
 
   &__name {
     @include h6;
     font-weight: bold;
+
+    @include for-phone-only {
+      font-size: 15px;
+    }
   }
 }

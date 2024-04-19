@@ -1,0 +1,64 @@
+@use "../../styles/mixins" as *;
+
+.store-banner {
+  display: flex;
+  align-items: center;
+  gap: 125px;
+
+  @include for-tablet-and-down {
+    flex-direction: column-reverse;
+    gap: 65px;
+  }
+
+  &__best {
+    color: var(--rust);
+  }
+
+  &__typography-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+
+    @include for-tablet-and-down {
+      width: 84%;
+    }
+
+    @include for-phone-only {
+      gap: 25px;
+    }
+  }
+
+  &__title {
+    @include h2;
+    color: var(--black);
+
+    @include for-tablet-and-down {
+      text-align: center;
+    }
+
+    @include for-phone-only {
+      font-size: 28px;
+      letter-spacing: 1px;
+      line-height: unset;
+    }
+  }
+
+  &__description {
+    @include body;
+    opacity: 50%;
+    color: var(--black);
+
+    @include for-tablet-and-down {
+      text-align: center;
+    }
+
+    @include for-phone-only {
+      margin-bottom: 50px;
+    }
+  }
+
+  & img {
+    border-radius: 8px;
+  }
+}
