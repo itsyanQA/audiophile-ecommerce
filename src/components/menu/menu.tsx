@@ -1,8 +1,7 @@
 import "./menu.scss";
 import HamburgerIcon from "@assets/shared/tablet/icon-hamburger.svg?react";
 import { CategoryCards } from "@components/category-cards";
-import { useClickOutside } from "@hooks/use-click-outside";
-import { Dispatch, MutableRefObject, SetStateAction, useEffect, useRef, MouseEvent } from "react";
+import { Dispatch, SetStateAction, useEffect, useRef, MouseEvent } from "react";
 import { createPortal } from "react-dom";
 import { useLocation } from "react-router-dom";
 
