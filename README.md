@@ -37,9 +37,6 @@ Users should be able to:
 #### Web
 ![audiophile-web](https://github.com/itsyanQA/fm-audiophile-ecommerce/assets/95849693/7fad18ab-2f73-4831-b98f-9521efa327d5)
 
-
-
-
 ### Links
 
 - [Solution URL](https://www.frontendmentor.io/solutions/audiophile-ecommerce-website-wdA64Df0J_)
@@ -55,8 +52,6 @@ Users should be able to:
 - Typescript
 - [React](https://reactjs.org/) 
 - [Styled Components](https://styled-components.com/)
-
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
 
 ### What I learned
 
